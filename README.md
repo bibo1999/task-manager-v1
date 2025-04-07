@@ -66,8 +66,8 @@ Perfect for agile teams, project managers, or anyone needing a clean interface t
    git clone https://github.com/yourusername/tasksync.git
 
 
-Usage 🖥️
-Basic Flow
+## Usage 🖥️
+### Basic Flow
 Add Tasks: Click "+ Add Task" to create new items
 
 Track Progress: Update task status as work progresses
@@ -77,8 +77,8 @@ View Reports: Navigate to Reports for visual analytics
 Manage Team: Assign tasks to team members
 
 
-API Reference 📚
-Data Structure:
+## API Reference 📚
+### Data Structure:
 // Task Object
 {
   id: Number,
@@ -100,7 +100,7 @@ Data Structure:
 }
 
 
-Contributing 🤝
+## Contributing 🤝
 We welcome contributions! Please follow these steps:
 
 Fork the Project
@@ -113,10 +113,10 @@ Push to the Branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request
 
-License 📄
+## License 📄
 Distributed under the MIT License. See LICENSE for more information.
 
-Acknowledgements 🙏
+## Acknowledgements 🙏
 Chart.js for powerful data visualization
 
 Font Awesome for beautiful icons
