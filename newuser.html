@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite New Member</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script src="newuser.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Member</h1>
+        <form id="inviteForm"> <!-- Updated id here to match JS -->
+            <div class="form-group">
+                <label for="memberName">Full Name</label> <!-- Updated label for -->
+                <input type="text" id="memberName" required /> <!-- Updated id here -->
+            </div>
+            <div class="form-group">
+                <label for="memberInitials">Initials</label> <!-- Updated label for -->
+                <input type="text" id="memberInitials" maxlength="2" required /> <!-- Updated id here -->
+            </div>
+            <div class="form-group">
+                <label for="memberPassword">Password</label> <!-- Updated label for -->
+                <input type="password" id="memberPassword" required /> <!-- Updated id here -->
+            </div>
+            <div class="form-group">
+                <label for="memberRole">Role</label> <!-- Updated label for -->
+                <select id="memberRole" required> <!-- Updated id here -->
+                    <option value="admin">Admin</option>
+                    <option value="worker">Worker</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Add Member</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskSync - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="authContainer">
+        <h1 id="authTitle">TaskSync Login</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Initials</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p id="loginError" class="error hidden"></p>
+        </form>
+        <form id="registerForm" class="hidden">
+            <div class="form-group">
+                <label for="regName">Full Name</label>
+                <input type="text" id="regName" name="regName" required>
+            </div>
+            <div class="form-group">
+                <label for="regInitials">Initials</label>
+                <input type="text" id="regInitials" name="regInitials" maxlength="2" required>
+            </div>
+            <div class="form-group">
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" name="regPassword" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <p id="registerError" class="error hidden"></p>
+        </form>
+        <div class="toggle-link">
+            <a href="#" id="toggleAuth">Need an account? Register</a>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
