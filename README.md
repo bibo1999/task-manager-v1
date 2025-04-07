@@ -63,7 +63,7 @@ Perfect for agile teams, project managers, or anyone needing a clean interface t
 ### Installation
 1. Clone the repo:
    ```sh
-   git clone https://github.com/yourusername/tasksync.git
+   git clone https://github.com/bibo1999/tasksync.git
 
 
 ## Usage 🖥️
