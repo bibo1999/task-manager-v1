@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <!-- Meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>TaskSync - Collaborative Task Manager</title>
+    
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Font Awesome icons -->
+</head>
+<body>
+    <!-- Header section containing logo, theme toggle, notifications, and user avatar -->
+    <header>
+        <div class="container header-content">
+            <!-- Logo with tasks icon -->
+            <div class="logo">
+                <i class="fas fa-tasks"></i>
+                <span>TaskSync</span>
+            </div>
+            
+            <!-- User menu section -->
+            <div class="user-menu">
+                <!-- Theme toggle button -->
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                    <span>Light</span>
+                </button>
+                
+                <!-- Notification bell with badge counter -->
+                <div class="notification-bell" id="notificationBell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="notificationCount">0</span>
+                </div>
+                
+                <!-- Notification dropdown menu -->
+                <div class="notification-dropdown" id="notificationDropdown">
+                    <div class="notification-header">
+                        <strong>Notifications</strong>
+                        <button id="clearNotifications" class="clear-btn">Clear All</button>
+                    </div>
+                    <ul id="notificationList"></ul>
+                </div>
+                
+                <!-- User avatar initials -->
+                <div class="user-avatar">AM</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content container -->
+    <div class="container">
+        <main>
+            <!-- Sidebar navigation -->
+            <aside class="sidebar">
+                <!-- Sidebar menu links -->
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="report.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+                
+                <!-- Team members section -->
+                <div class="team-members">
+                    <div><strong>Team Members</strong></div>
+                    <div class="team-member" style="background-color: #6366F1;">AM</div><span>Abdelrahman Moataz</span>
+                </div>  
+            </aside>
+
+            <!-- Main content area -->
+            <section class="content">
+                <!-- Content header with title and add task button -->
+                <div class="content-header">
+                    <h1>Team Dashboard</h1>
+                    <button class="btn btn-primary" id="addTaskBtn">
+                        <i class="fas fa-plus"></i> Add Task
+                    </button>
+                </div>
+                
+                <!-- Dashboard statistics cards -->
+                <div class="dashboard-stats">
+                    <!-- Total tasks card -->
+                    <div class="stat-card slide-in" style="animation-delay: 0.1s">
+                        <div class="stat-icon" style="background-color: var(--primary);">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="total-tasks">0</div>
+                            <div class="stat-label">Total Tasks</div>
+                        </div>
+                    </div>
+                    
+                    <!-- In progress tasks card -->
+                    <div class="stat-card slide-in" style="animation-delay: 0.2s">
+                        <div class="stat-icon" style="background-color: var(--warning);">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="in-progress">0</div>
+                            <div class="stat-label">In Progress</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Completed tasks card -->
+                    <div class="stat-card slide-in" style="animation-delay: 0.3s">
+                        <div class="stat-icon" style="background-color: var(--success);">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="completed">0</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task Form (initially hidden) -->
+                <div id="taskFormContainer" class="task-form-container hidden">
+                    <form id="taskForm" class="task-form">
+                        <!-- Task title input -->
+                        <input type="text" id="taskTitle" placeholder="Task Title" required>
+                        
+                        <!-- Task description textarea -->
+                        <textarea id="taskDescription" placeholder="Task Description" required></textarea>
+                        
+                        <!-- Task due date -->
+                        <input type="date" id="taskDate" required>
+                        
+                        <!-- Task priority dropdown -->
+                        <select id="taskPriority">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                        
+                        <!-- Task assignee dropdown -->
+                        <select id="taskAssignee" required>
+                            <option value="" disabled selected>Assign Task To</option>
+                            <option value="AM">Abdelrahman Moataz</option>
+                        </select>
+                        
+                        <!-- Form submit button -->
+                        <button type="submit">Create Task</button>
+                    </form>
+                </div>
+
+                <!-- Container where tasks will be dynamically inserted -->
+                <div id="tasksContainer"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

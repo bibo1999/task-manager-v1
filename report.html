@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <!-- ============================================= -->
+    <!--               META & RESOURCES                -->
+    <!-- ============================================= -->
+    
+    <!-- Character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>TaskSync - Reports</title>
+    
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="style.css"> <!-- Main application styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Font Awesome icons -->
+    
+    <!-- Chart.js library for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- ============================================= -->
+    <!--               HEADER SECTION                  -->
+    <!-- ============================================= -->
+    
+    <header>
+        <div class="container header-content">
+            <!-- Application logo -->
+            <div class="logo">
+                <i class="fas fa-tasks"></i>
+                <span>TaskSync</span>
+            </div>
+            
+            <!-- User controls section -->
+            <div class="user-menu">
+                <!-- Theme toggle button -->
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                    <span>Light</span>
+                </button>
+                
+                <!-- Notification system -->
+                <div class="notification-bell" id="notificationBell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="notificationCount">0</span>
+                </div>
+                <div class="notification-dropdown" id="notificationDropdown">
+                    <div class="notification-header">
+                        <strong>Notifications</strong>
+                        <button id="clearNotifications" class="clear-btn">Clear All</button>
+                    </div>
+                    <ul id="notificationList"></ul>
+                </div>
+                
+                <!-- User avatar -->
+                <div class="user-avatar">JS</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================= -->
+    <!--               MAIN CONTENT                   -->
+    <!-- ============================================= -->
+    
+    <div class="container">
+        <main>
+            <!-- Left sidebar navigation -->
+            <aside class="sidebar">
+                <!-- Navigation menu -->
+                <ul class="sidebar-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="report.html" class="active"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+                
+                <!-- Team members section -->
+                <div class="team-members">
+                    <div><strong>Team Members</strong></div>
+                    <div class="team-member" style="background-color: #6366F1;">AM</div>
+                    <span>Abdelrahman Moataz</span>
+                </div>
+            </aside>
+
+            <!-- Main content area -->
+            <section class="content">
+                <!-- Content header -->
+                <div class="content-header">
+                    <h1>Task Reports</h1>
+                </div>
+            
+                <!-- First row of charts -->
+                <div class="charts-row">
+                    <!-- Task status distribution chart -->
+                    <div class="chart-container">
+                        <h3>Task Status Distribution</h3>
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                    
+                    <!-- Priority breakdown chart -->
+                    <div class="chart-container">
+                        <h3>Priority Breakdown</h3>
+                        <canvas id="priorityChart"></canvas>
+                    </div>
+                </div>
+            
+                <!-- Second row of charts -->
+                <div class="charts-row">
+                    <!-- Tasks by assignee chart -->
+                    <div class="chart-container">
+                        <h3>Tasks by Assignee</h3>
+                        <canvas id="assigneeChart"></canvas>
+                    </div>
+                    
+                    <!-- Task completion timeline chart -->
+                    <div class="chart-container">
+                        <h3>Task Completion Over Time</h3>
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ============================================= -->
+    <!--               JAVASCRIPT                     -->
+    <!-- ============================================= -->
+    
+    <!-- Page-specific JavaScript file for report functionality -->
+    <script src="report.js"></script>
+</body>
+</html>
